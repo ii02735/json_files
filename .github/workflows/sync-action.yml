@@ -12,5 +12,5 @@ jobs:
                 steps:
                         - uses: srt32/git-actions@v0.0.3
                           with:
-                                  args: "git status"
+                                  args: "cd json_files && git status"
                       
