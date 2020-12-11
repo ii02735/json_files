@@ -1,18 +1,16 @@
 name: "sync fork"
 
 on:
-        schedule:
-                - cron: '* * * * *'
+        push:
+                branches:  
+                          - 'main'
 
 jobs:
         sync:
                 runs-on: 'ubuntu-latest'
 
                 steps:
-                        - uses: tgymnich/fork-sync@v1.2
+                        - uses: srt32/git-actions@v0.0.3
                           with:
-                                  github_token: ${{ secrets.ACCESS_TOKEN }}
-                                  owner: YadalleeBilaal
-                                  base: main
-                                  head: main
-                                  auto_approve: true
+                                  args: "status"
+                      
